@@ -1,0 +1,24 @@
+<div *ngFor="let note of notes ">
+  <!-- | async -->
+  <mat-card class="note">
+    <mat-card-header>
+      <mat-card-title class="note-title">
+        {{ note.title }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+      <p>{{ note.description }}</p>
+    </mat-card-content>
+    <mat-card-actions class="card-buttons">
+      <div>
+        <button mat-icon-button><mat-icon>arrow_right_alt</mat-icon></button>
+        <button mat-icon-button><mat-icon>star_half</mat-icon></button>
+        <button mat-icon-button><mat-icon>done_outline</mat-icon></button>
+      </div>
+      <div>
+        <button mat-icon-button (click)="editNote(note.id, note.title, note.description, note.idCategoryNote)"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button (click)="deleteNote(note.id)"><mat-icon>delete</mat-icon></button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

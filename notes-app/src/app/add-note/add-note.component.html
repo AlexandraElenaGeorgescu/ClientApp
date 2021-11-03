@@ -1,0 +1,24 @@
+<div class="add-note">
+  <h1>Add a note</h1>
+  <form class="add-note-form">
+    <mat-form-field>
+      <input matInput name="noteName" [(ngModel)]="title" />
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        name="noteDescription"
+        placeholder="Note description"
+        [(ngModel)]="description"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Choose a category </mat-label>
+      <mat-select *ngIf="categories" [(ngModel)]="idCategoryNote" name="NoteCategory"> 
+          <mat-option *ngFor="let categ of categories" [value]="categ.id">{{categ.name}}</mat-option>
+      </mat-select>
+  </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="add()">Add</button>
+</div>

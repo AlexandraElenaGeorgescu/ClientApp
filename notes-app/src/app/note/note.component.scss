@@ -1,0 +1,22 @@
+.note {
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin: 20px 10px 20px 10px;
+  display: flex;
+  flex-direction: column;
+
+  .card-title {
+    flex-shrink: 0;
+  }
+
+  .card-content {
+    flex-grow: 1;
+    overflow: auto;
+  }
+
+  .card-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}
