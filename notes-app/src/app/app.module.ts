@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 //import { HttpMockApiInterceptor } from './services/http-mock-api.interceptor';
 import {MatSelectModule} from '@angular/material/select';
+import { EditNoteComponent } from './edit-note/edit-note.component';
 //I don't need mock config or any other mock anymore
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {MatSelectModule} from '@angular/material/select';
     FilterComponent,
     AddNoteComponent,
     HomeComponent,
+    EditNoteComponent,
   ],
   imports: [
     BrowserModule,

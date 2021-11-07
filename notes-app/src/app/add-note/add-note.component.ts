@@ -11,21 +11,22 @@ import { Note } from '../models/note';
   styleUrls: ['./add-note.component.scss']
 })
 export class AddNoteComponent implements OnInit {
+  id: string;
   title: string;
   description: string;
   idCategoryNote: string;
 
   categories: Category[];
   constructor(private router: Router, private filterService: FilterService, private noteService: NoteService) { }
-   
+
   ngOnInit(): void {
     this.categories = this.filterService.getFilters();
-  
+
   }
 
   add() {
-     
-     this.noteService.addNote(this.title,this.description,this.idCategoryNote).subscribe(() => this.router.navigateByUrl(''));
-     //this.noteService.editNote(this.title, this.description, this.idCategoryNote);
-}
+
+    this.noteService.addNote(this.title, this.description, this.idCategoryNote).subscribe(() => this.router.navigateByUrl(''));
+    //this.noteService.editNote(this.id, this.title, this.description, this.idCategoryNote).subscribe(() => this.router.navigateByUrl(''));
+  }
 }

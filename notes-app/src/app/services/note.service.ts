@@ -45,18 +45,17 @@ export class NoteService {
                 }
   return  this.httpClient.post<Note>(this.baseUrl+"/notes", note);
 }
-editNode(noteId: string, noteTitle:string, noteDescription:string, noteCategoryId:string) {
-   let note = {
-    id: noteId,
+editNote(noteId: string, noteTitle:string, noteDescription:string, noteCategoryId:string) {
+    let note = {
     description: noteDescription,
     title: noteTitle,
     categoryId: noteCategoryId
   }
 
-  return this.httpClient.put(this.baseUrl + '/notes/'+ noteId, note);
+  return this.httpClient.put(this.baseUrl +"/notes/"+ noteId, note);
 }
 deleteNote(id:string){
-  return this.httpClient.delete(this.baseUrl+'/notes/'+id, this.httpOptions);
+  return this.httpClient.delete(this.baseUrl+'/notes/'+id);
 }
 }
 
